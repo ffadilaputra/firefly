@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
-    "lint": "./node_modules/.bin/eslint **/*.js"
+    "lint": "./node_modules/.bin/eslint **/*.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Cedric Amaya <amaya.cedric@gmail.com> (http://cedricamaya.me/)",
   "license": "MIT",
@@ -21,7 +23,8 @@
     "morgan": "^1.9.0",
     "nodemon": "^1.14.11",
     "sequelize": "^4.31.2",
-    "sqlite3": "^3.1.13"
+    "sqlite3": "^3.1.13",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "eslint-config-standard": "^11.0.0-beta.0",
@@ -29,5 +32,6 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1"
-  }
+  },
+  "snyk": true
 }
